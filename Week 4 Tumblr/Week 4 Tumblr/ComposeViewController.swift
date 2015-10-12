@@ -34,14 +34,85 @@ class ComposeViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewWillAppear (animated: Bool) {
-        //
-    }
+  /*  override func viewWillAppear (animated: Bool) {
+    }*/
+    //Animate buttons coming up
     override func viewDidAppear (animated: Bool) {
-        
-        
+        //photo button
+        UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.photoButton.center.y = 200
+            }) { (Bool) -> Void in
+                //
+        }
+        //chat button
+        UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.chatButton.center.y = 325
+            }) { (Bool) -> Void in
+                //
+        }
+        //text button
+        UIView.animateWithDuration(0.4, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.textButton.center.y = 200
+            }) { (Bool) -> Void in
+                //
+        }
+        //quote button
+        UIView.animateWithDuration(0.4, delay: 0.05, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.quoteButton.center.y = 200
+            }) { (Bool) -> Void in
+                //
+        }
+        //link button
+        UIView.animateWithDuration(0.4, delay: 0.15, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.linkButton.center.y = 325
+            }) { (Bool) -> Void in
+                //
+        }
+        //video button
+        UIView.animateWithDuration(0.4, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.videoButton.center.y = 325
+            }) { (Bool) -> Void in
+                //
+        }
     }
     override func viewWillDisappear (animated: Bool) {
+        //photo button
+        UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.photoButton.center.y = -200
+            }) { (Bool) -> Void in
+                //
+        }
+        //chat button
+        UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.chatButton.center.y = -125
+            }) { (Bool) -> Void in
+                //
+        }
+        //text button
+        UIView.animateWithDuration(0.4, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.textButton.center.y = -200
+            }) { (Bool) -> Void in
+                //
+        }
+        //quote button
+        UIView.animateWithDuration(0.4, delay: 0.05, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.quoteButton.center.y = -200
+            }) { (Bool) -> Void in
+                //
+        }
+        //link button
+        UIView.animateWithDuration(0.4, delay: 0.15, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.linkButton.center.y = -125
+            }) { (Bool) -> Void in
+                //
+        }
+        //video button
+        UIView.animateWithDuration(0.4, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            self.videoButton.center.y = -125
+            }) { (Bool) -> Void in
+                //
+        }
+
     }
 
     @IBAction func onTapNevermindButton(sender: AnyObject) {

@@ -119,7 +119,6 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         }
     }
     @IBAction func onTapNevermindButton(sender: AnyObject) {
-        print("woody. CRAZY!")
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
