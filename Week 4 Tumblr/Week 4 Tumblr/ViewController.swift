@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController/*, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning*/ {
+class ViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
@@ -76,7 +76,7 @@ class ViewController: UIViewController/*, UIViewControllerTransitioningDelegate,
         vc.didMoveToParentViewController(self)
     }
     //Segue
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         let destinationVC = segue.destinationViewController as UIViewController
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = self
@@ -117,6 +117,10 @@ class ViewController: UIViewController/*, UIViewControllerTransitioningDelegate,
                     fromViewController.view.removeFromSuperview()
             }
         }
-    }*/
+    }
+    @IBAction func onTapNevermindButton(sender: AnyObject) {
+        print("woody. CRAZY!")
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 

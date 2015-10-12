@@ -40,7 +40,7 @@
                                         <state key="normal" image="compose_button"/>
                                         <connections>
                                             <action selector="tapCompose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfE-D9-mtA"/>
-                                            <segue destination="vZ6-tB-2B3" kind="modal" identifier="firstSegue" modalPresentationStyle="currentContext" id="dz0-Mc-iCy"/>
+                                            <segue destination="vZ6-tB-2B3" kind="modal" identifier="firstSegue" id="dz0-Mc-iCy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wgf-La-TXY">
@@ -119,7 +119,7 @@
         <!--Compose View Controller-->
         <scene sceneID="l4S-Hg-hvF">
             <objects>
-                <viewController id="vZ6-tB-2B3" customClass="ComposeViewController" sceneMemberID="viewController">
+                <viewController id="vZ6-tB-2B3" customClass="ComposeViewController" customModule="Week_4_Tumblr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93e-v3-EHc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,6 +169,14 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="chatButton" destination="Br5-Yk-BT3" id="1x9-Xh-jfE"/>
+                        <outlet property="linkButton" destination="GqE-NO-6qz" id="yYQ-ia-eXo"/>
+                        <outlet property="photoButton" destination="FEb-Ku-iaS" id="trW-O1-oqw"/>
+                        <outlet property="quoteButton" destination="xeA-tg-5Ef" id="TSg-gK-V3g"/>
+                        <outlet property="textButton" destination="xpY-HB-5wi" id="vIn-Qz-ire"/>
+                        <outlet property="videoButton" destination="FVj-Io-9kV" id="DdK-VW-5mv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foG-Mf-blt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,7 +185,7 @@
         <!--Account View Controller-->
         <scene sceneID="7C3-eu-kGB">
             <objects>
-                <viewController storyboardIdentifier="AccountViewController" id="uaf-Tf-MIQ" customClass="AccountViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountViewController" id="uaf-Tf-MIQ" customClass="AccountViewController" customModule="Week_4_Tumblr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7G1-Lb-P2C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

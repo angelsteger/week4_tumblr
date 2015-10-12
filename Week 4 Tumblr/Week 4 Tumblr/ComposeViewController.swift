@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+class ComposeViewController: UIViewController{
     @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var quoteButton: UIButton!
@@ -22,12 +22,12 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        textButton.center.y = 560
-        photoButton.center.y = 560
-        quoteButton.center.y = 560
-        linkButton.center.y = 560
-        chatButton.center.y = 560
-        videoButton.center.y = 560
+        textButton.center.y = 650
+        photoButton.center.y = 650
+        quoteButton.center.y = 650
+        linkButton.center.y = 650
+        chatButton.center.y = 650
+        videoButton.center.y = 650
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,50 +43,7 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
     }
     override func viewWillDisappear (animated: Bool) {
     }
-    
-    //Segue code
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        let destinationVC = segue.destinationViewController as UIViewController
-        destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
-        destinationVC.transitioningDelegate = self
-    }
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        isPresenting = true
-        return self
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        isPresenting = false
-        return self
-    }
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.3
-    }
-    
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        print("animating transition")
-        let containerView = transitionContext.containerView()
-        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        
-        if (isPresenting) {
-            containerView!.addSubview(toViewController.view)
-            toViewController.view.alpha = 0
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                toViewController.view.alpha = 1
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-            }
-        } else {
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                fromViewController.view.alpha = 0
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-                    fromViewController.view.removeFromSuperview()
-            }
-        }
-    }
+
     @IBAction func onTapNevermindButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
