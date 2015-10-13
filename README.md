@@ -1,4 +1,5 @@
 # week4_tumblr
+![screenshot](week4.gif)
 
 Hours
 12
