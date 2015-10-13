@@ -11,7 +11,18 @@ import UIKit
 class TrendingViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
-
+    @IBOutlet weak var loadingImage: UIImageView!
+    
+    //Define class variables for your images
+    var loading_1: UIImage!
+    var loading_2: UIImage!
+    var loading_3: UIImage!
+    
+    //Store our images an array in order to easily reference them for our animation.
+    var images: [UIImage]!
+    
+    //store our animated image into another variable of type UIImage
+    var animatedImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     @IBOutlet var buttons: [UIButton]!
     @IBAction func tapCompose(sender: AnyObject) {
     }
+    @IBOutlet weak var discoverBubble: UIImageView!
     
 /*class MyViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     var isPresenting: Bool = true
@@ -39,6 +40,9 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
         // Within the ViewDidLoad() method, access the main Storyboard through code
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // Instantiates each ViewController by referencing storyboard and the particular ViewController's Storyboard ID
@@ -52,6 +56,15 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         buttons[selectedIndex].selected = true
         didPressTab(buttons[selectedIndex])
         
+        discoverBubble.hidden = false
+        UIView.animateWithDuration(0.75, delay: 0, /*usingSpringWithDamping: 1, initialSpringVelocity: 1,*/ options: [.Repeat, .Autoreverse], animations: { () -> Void in
+            self.discoverBubble.center.y = 500
+            },
+            completion: { (Bool) -> Void in
+                //self.discoverBubble.center.y = 504
+        })
+
+        
     }
 
     
@@ -59,6 +72,8 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     // Create action and add all the buttons here
     @IBAction func didPressTab(sender: UIButton) {
         let previousIndex = selectedIndex
@@ -74,6 +89,20 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         vc.view.frame = contentView.bounds
         contentView.addSubview(vc.view)
         vc.didMoveToParentViewController(self)
+        //Add conditionals for animating bubble
+        if selectedIndex == 1 {
+            //Set discover bubble to be invisible
+            discoverBubble.hidden = true
+            UIView.animateWithDuration(0.75, delay: 0, /*usingSpringWithDamping: 1, initialSpringVelocity: 1,*/ options: [.Repeat, .Autoreverse], animations: { () -> Void in
+                self.discoverBubble.center.y = 500
+                },
+                completion: { (Bool) -> Void in
+                    self.discoverBubble.center.y = 504
+            })
+        }
+        else {
+            discoverBubble.hidden = false
+        }
     }
     //Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
