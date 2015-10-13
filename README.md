@@ -1,7 +1,5 @@
 # week4_tumblr
 
-![screenshot](week4.gif)
-
 Hours
 12
 
@@ -14,3 +12,5 @@ Extras
 - Optional: Login button should show animate the login form over the view controller.
 - Optional: Discover bubble should bob up and down unless the SearchViewController is tapped.
 
+![screenshot](week4.gif)
+Screencap courtesy of LiceCap
